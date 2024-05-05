@@ -14,6 +14,10 @@ export const GlobalStyles = createGlobalStyle`
     color: white;
     font-family: sans-serif;
     font-size: 1.6rem;
-    background-color: #555;
+    background-color: #333;
+  }
+
+  ul{
+    list-style: none;
   }
 `;
