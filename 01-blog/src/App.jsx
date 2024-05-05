@@ -1,10 +1,15 @@
+import { AppStyled } from "./AppStyled";
 import { GlobalStyles } from "./GlobalStyles";
+import PostsList from "./features/posts/PostsList";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <h1>HELLO</h1>
+      <AppStyled>
+        <h2>Posts</h2>
+        <PostsList />
+      </AppStyled>
     </>
   );
 }
