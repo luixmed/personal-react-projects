@@ -5,4 +5,5 @@ export const PostsListStyled = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 3.2rem;
+  row-gap: 2.4rem;
 `;
