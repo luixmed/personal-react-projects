@@ -27,11 +27,19 @@ export const AddPostFormStyled = styled.section`
 
   input,
   select {
-    color: inherit
+    color: #333;
     font-family: inherit;
     font-size: 1.6rem;
 
     padding: 0.8rem;
+  }
+
+  textarea {
+    color: #444;
+    font-family: inherit;
+    font-size: 1.6rem;
+
+    padding: 1rem;
   }
 
   button {
