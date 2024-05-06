@@ -11,7 +11,7 @@ export const AppStyled = styled.main`
 
     /* Box */
     padding-block: 1.6rem;
-    margin-bottom: 4.8rem;
+    margin-block: 4.8rem;
 
     background-color: #444;
   }
