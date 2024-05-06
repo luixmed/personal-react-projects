@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { PostsListStyled } from "./PostsListStyles";
-import { getAllPosts } from "./postsSlice";
+import { getPosts } from "./postsSlice";
 import PostItem from "./PostItem";
 
 function PostsList() {
-  const posts = useSelector(getAllPosts);
+  const posts = useSelector(getPosts);
 
   return (
     <PostsListStyled>

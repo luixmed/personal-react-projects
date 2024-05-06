@@ -6,6 +6,7 @@ export const AddPostFormStyled = styled.section`
 
   /* Style */
   background-color: #444;
+
   h2 {
     font-size: 3rem;
     text-transform: uppercase;
@@ -55,5 +56,11 @@ export const AddPostFormStyled = styled.section`
     border-radius: 10rem;
 
     background-color: #e67700;
+
+    &:disabled {
+      color: #444;
+      background-color: #666;
+      cursor: not-allowed;
+    }
   }
 `;

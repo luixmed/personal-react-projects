@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { AddPostFormStyled } from "./AddPostFormStyles";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllAuthors } from "../authors/authorsSlice";
 import { addPost } from "./postsSlice";
+import { getAllAuthors } from "../authors/authorsSlice";
 
 function AddPostForm() {
   const [title, setTitle] = useState("");
-  const [authorId, setAuthorId] = useState("");
+  const [author, setAuthor] = useState("");
   const [content, setContent] = useState("");
 
   const authors = useSelector(getAllAuthors);
@@ -14,11 +14,12 @@ function AddPostForm() {
   const dispatch = useDispatch();
 
   function handleSavePost() {
-    if (!title || !content) return;
+    if (!title || !content || !author) return;
 
-    dispatch(addPost(title, content));
+    dispatch(addPost(title, content, author));
     setTitle("");
     setContent("");
+    setAuthor("");
   }
 
   return (
@@ -41,12 +42,12 @@ function AddPostForm() {
           <label htmlFor="postAuthor">Author</label>
           <select
             id="postAuthor"
-            value={authorId}
-            onChange={(e) => setAuthorId(e.target.value)}
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
           >
             <option value=""></option>
             {authors.map((author) => (
-              <option key={author.id} value={author.id}>
+              <option key={author.id} value={author.name}>
                 {author.name}
               </option>
             ))}
@@ -68,7 +69,7 @@ function AddPostForm() {
         <button
           type="button"
           onClick={handleSavePost}
-          disabled={!title || !content || !authorId}
+          disabled={!title || !content || !author}
         >
           Save post
         </button>

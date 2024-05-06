@@ -5,11 +5,13 @@ const initialState = [
     id: "1",
     title: "Learning Redux Toolkit",
     content: "I've heard good things.",
+    author: "Dude Lebowski",
   },
   {
     id: "2",
     title: "Slices...",
     content: "The more I say slice, the more I want pizza.",
+    author: "Neil Young",
   },
 ];
 
@@ -18,12 +20,13 @@ const postsSlice = createSlice({
   initialState,
   reducers: {
     addPost: {
-      prepare(title, content) {
+      prepare(title, content, author) {
         return {
           payload: {
             id: nanoid(),
             title,
             content,
+            author,
           },
         };
       },
@@ -35,7 +38,7 @@ const postsSlice = createSlice({
   },
 });
 
-export const getAllPosts = (state) => state.posts;
+export const getPosts = (state) => state.posts;
 
 export const { addPost } = postsSlice.actions;
 
